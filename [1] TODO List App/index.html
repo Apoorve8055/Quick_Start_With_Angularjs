@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="Style/main.css">
 
 <body ng-app="TodoList">
-<h1 class="head">My TODO List </h1>
+<div class="container">
+    <h1 class="head">My TODO List </h1>
     <div ng-controller="mainCCtrl" class="list" >
-        <div ng-repeat="todo in todos" ng-class="{'iteams-class' : editing}">
+        <div ng-class="{'iteams-class' : editing , 'edited' : edited }" ng-repeat="todo in todos">
 
             <input ng-model="todo.completeed" type="checkbox"/>
-            <label ng-hide="editing" class="edit_label" > {{ todo.data }}</label>
-            <input ng-blur="editing = false;" ng-show="editing" ng-model="todo.data" class="edit_label"  type="text"/>
+            <label class="edit_label" ng-hide="editing"  > {{ todo.data }}</label>
+            <input class="edit_label" ng-blur="editing = false;" ng-change="edited = true;" ng-model="todo.data" ng-show="editing"  type="text"/>
 
             <div class="actions" >
                 <a href="" ng-click="editing = !editing" > Edit </a>
@@ -24,6 +25,7 @@
         </div>
     </div>
 
+</div>
 <script src="Script/app.js"></script>
 <script src="vendor/angular.js"></script>
 <script src="Style/hellow-world.js"></script>

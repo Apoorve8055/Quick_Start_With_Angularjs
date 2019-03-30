@@ -1,8 +1,9 @@
 angular.module("TodoList",[])
 .controller('mainCCtrl',function($scope){
-    $scope.testctrl = function(){
-        console.log("testinng controller");
+    $scope.learningngChange = function(){
+        console.log("input change ");
     }
+
     $scope.todos = [
         { "data" : "testing 1"},
         { "data" : "testing 2"},
