@@ -1,10 +1,21 @@
+.head{
+    text-align:center;
+}
 .list{
 
 }
 .actions{
  display: inline-block;
-
+float:right;
 }
 a{
     padding-right:10px;
+}
+.iteams-class{
+    width:100%;
+
+
+}
+.iteams-class input {
+    font-size:17px;
 }

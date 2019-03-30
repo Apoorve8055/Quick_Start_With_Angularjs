@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="Style/main.css">
 
 <body ng-app="TodoList">
-<h1>My TODO List </h1>
+<h1 class="head">My TODO List </h1>
     <div ng-controller="mainCCtrl" class="list" >
-        <div ng-repeat="todo in todos">
+        <div ng-repeat="todo in todos" ng-class="{'iteams-class' : editing}">
+
             <input ng-model="todo.completeed" type="checkbox"/>
             <label ng-hide="editing" class="edit_label" > {{ todo.data }}</label>
-            <input ng-show="editing" ng-model="todo.data" class="edit_label"  type="text"/>
+            <input ng-blur="editing = false;" ng-show="editing" ng-model="todo.data" class="edit_label"  type="text"/>
 
             <div class="actions" >
                 <a href="" ng-click="editing = !editing" > Edit </a>
