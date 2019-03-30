@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>TODO APP</title>
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <link rel="stylesheet" href="Style/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <!--    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>-->
+        <link href="Style/main.css" rel="stylesheet">
 
-<body ng-app="TodoList">
-<div class="container">
-    <h1 class="head">My TODO List </h1>
-    <div ng-controller="mainCCtrl" class="list" >
-        <div ng-class="{'iteams-class' : editing , 'edited' : edited }" ng-repeat="todo in todos">
+    <body ng-app="TodoList">
+    <div class="container">
+        <h1 class="head">My TODO List </h1>
+        <div class="list" ng-controller="mainCCtrl" >
+            <div ng-class="{'iteams-class' : editing , 'edited' : edited }" ng-repeat="todo in todos">
 
-            <input ng-model="todo.completeed" type="checkbox"/>
-            <label class="edit_label" ng-hide="editing"  > {{ todo.data }}</label>
-            <input class="edit_label" ng-blur="editing = false;" ng-change="edited = true;" ng-model="todo.data" ng-show="editing"  type="text"/>
+                <input ng-model="todo.completeed" type="checkbox"/>
+                <label class="edit_label" ng-hide="editing"  > {{ todo.data }}</label>
+                <input class="edit_label" ng-blur="editing = false;" ng-change="edited = true;" ng-model="todo.data" ng-show="editing"  type="text"/>
 
-            <div class="actions" >
-                <a href="" ng-click="editing = !editing" > Edit </a>
-                <a href="" ng-click="servicefun()"> save </a>
-                <a href="" class="delete" ng-click="delete()" > delete </a>
+                <div class="actions" >
+                    <a href="" ng-click="editing = !editing" > Edit </a>
+                    <a href="" ng-click="servicefun()"> save </a>
+                    <a class="delete" href="" ng-click="delete()" > delete </a>
+                </div>
+
             </div>
-
         </div>
-    </div>
 
-</div>
-<script src="Script/app.js"></script>
-<script src="vendor/angular.js"></script>
-<script src="Style/hellow-world.js"></script>
-</head>
-</body>
-</html>
+    </div>
+    <script src="Script/app.js"></script>
+    <script src="vendor/angular.js"></script>
+    <script src="Style/hellow-world.js"></script>
+    </head>
+    </body>
+    </html>

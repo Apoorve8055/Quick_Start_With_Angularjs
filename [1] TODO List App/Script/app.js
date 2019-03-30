@@ -8,17 +8,9 @@ angular.module("TodoList",[])
 
     DataService.gettodo(function(response){
     		console.log(response.data);
+        $scope.todos = response.data;
     });
 
-        $scope.todos =[
-            { "data" : "testing 1"},
-            { "data" : "testing 2"},
-            { "data" : "testing 3"},
-            { "data" : "testing 4"},
-            { "data" : "testing 4"},
-            { "data" : "testing 5"},
-            { "data" : "testing 5"},
-        ]
 
 
 })
@@ -29,7 +21,7 @@ angular.module("TodoList",[])
         }
 
         this.gettodo = function(callback){
-        	$http.get('/mocks/todo.json')
+        	$http.get('https://raw.githubusercontent.com/Apoorve8055/Quick_Start_With_Angularjs/master/%5B1%5D%20TODO%20List%20App/mocks/todo.json')
         .then(callback);
         }
 
